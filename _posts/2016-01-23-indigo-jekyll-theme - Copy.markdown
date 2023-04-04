@@ -1,0 +1,26 @@
+---
+title: "Hierarchical Linear Modeling"
+layout: post
+date: 2023-04-02 14:10
+tag: jekyll
+image: C:/Jekyll/indigo/assets/images/ANOVA.png
+headerImage: true
+projects: true
+hidden: true # don't count this post in blog pagination
+description: "This is a simple and minimalist template for Jekyll for those who likes to eat noodles."
+category: project
+author: Cameron Arno
+externalLink: false
+---
+
+![Screenshot](C:/Jekyll/indigo/assets/images/ANOVA.png)
+
+##Hierarchical Linear Modeling: What is it?
+
+Hierarchical Linear Modeling (HLM) also known as multi-level modeling, is a statistical procedure often used in HR to analyze data that is organized hierarchically, also known as nested data. HLM allows HR professionals to examine nested data and shows how variables at different levels of the organization impact each other. For instance, analysts may look at the effects of individual characteristics on team performance, or the impact of team characteristics on employee behavior. The data structures in organizations are often more complicated, having individuals nested in teams, teams nested in departments, and departments further nested in separate geographic locations. HLM is important because it allows analysts to develop more effective strategies and interventions based on understanding the relationships between organizational and individual-level factors. 
+
+
+---
+
+[Check it out](https://sergiokopplin.github.io/indigo/) here.
+If you need some help, just [tell me](https://github.com/sergiokopplin/indigo/issues).
