@@ -3,15 +3,16 @@ layout: about
 ---
 
 # About This Site
-  Welcome to my personal website, where I am pleased to share my projects and interests with potential employers and associates. As an HR analyst, I specialize in using data analytics and statistical methods to solve workforce-related problems and achieve organizational goals.  I take pride in my ability to identify and analyze critical information and effectively communicate findings with stakeholders. I possess experience and training in various HR functions, such as Learning & Development, Talent Acquisition, and Performance Management. I used R Markdown and Jekyll to create this website. Feel free to get in touch.
+  Welcome to my website, where I share some of the statistical analyses used in talent management and other I/O related functions. 
 <br/>
 
 
 # Interests
-- HR Analytics
 - Talent Management
-- Adult Learning Theories
-- Personality
+- People Analytics
+- Organizational Development
+- Psychometrics
+- Guitar
  
 <br/>
 
