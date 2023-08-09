@@ -1,7 +1,7 @@
 # Site settings
 title: People Analyst
-baseurl: "analyst"
-url: "https://camarn.github.io/analyst/"
+baseurl: ""
+url: "https://camarn.github.io/analyst"
 google_analytics: # Tracking ID, e.g. "UA-000000-01"
 
 # Author
@@ -60,4 +60,3 @@ exclude:
   - "LICENSE"
   - "READE.md"
   - "screenshot.png"
-remote_theme: "AP"
