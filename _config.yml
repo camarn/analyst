@@ -1,7 +1,7 @@
 # Site settings
 title: People Analyst
-baseurl: "/analyst"
-url: "https://camarn.github.io"
+baseurl: ""
+url: "https://harmonizetalent.site"
 google_analytics: # Tracking ID, e.g. "UA-000000-01"
 
 # Author
