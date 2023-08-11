@@ -1,7 +1,7 @@
 # Site settings
 title: People Analyst
 baseurl: ""
-url: "https://camarn.github.io/analyst"
+url: "https://harmonizetalent.site"
 google_analytics: # Tracking ID, e.g. "UA-000000-01"
 
 # Author
@@ -9,7 +9,7 @@ author:
   name: Cameron Arno
   desc: M.S. I/O Psychology '22 | Texas A&M University
   email: cameron.arno@gmail.com
-  selfie: assets/img/Cameron2.jpg
+  selfie: assets/img/Cameron3.jpg
 
 # social
 social:
@@ -17,11 +17,11 @@ social:
   behance:
   bitbucket:
   dribbble:
-  facebook: Test
+  facebook: 
   flickr:
-  github: kssim
+  github: camarn
   google_plus:
-  instagram:
+  instagram: cameronarno_
   keybase:
   linkedin: https://www.linkedin.com/in/cameron-arno-1633861ba/
   pinterest:
@@ -31,7 +31,7 @@ social:
   steam:
   tumblr:
   gitlab:
-  twitter: Test
+  twitter: 
   vimeo:
   wordpress:
   youtube:
@@ -60,3 +60,4 @@ exclude:
   - "LICENSE"
   - "READE.md"
   - "screenshot.png"
+remote_theme: kssim/ap
