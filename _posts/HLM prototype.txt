@@ -18,4 +18,3 @@ Hierarchical Linear Modeling (HLM) also known as multi-level modeling (MLM), is 
 3. Examine several models using multiple goodness-of-fit methods to identify best model
 4. Center model if needed and re-run analysis
 5. Interpret results
-

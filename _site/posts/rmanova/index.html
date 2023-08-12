@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>People Analyst</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/fontawesome-all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon.ico">
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+
+  <body>
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="/">
+          <h2 class="nav-title">People Analyst</h2>
+        </a>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts/">Posts</a></li>
+        </ul>
+    </div>
+  </nav>
+
+    <main>
+      <div class="portfolio">
+  
+</div>
+<div class="post">
+  <h2 class="post-title">Repeated Measures ANOVA</h2>
+  <div class="post-line"></div>
+
+  <h2 id="repeated-measures-anova-what-is-it">Repeated Measures ANOVA: What is it?</h2>
+
+<p>A repeated measures ANOVA (analysis of variance) is a statistical technique that is used to compare group means measured from the same group multiple times. It’s a great way to explore changes in a variable of interest over time. Talent management and Human resources departments may find this technique especially useful in evaluating the effectiveness of training programs or development initiatives. Here we will explore an example of an organization using a repeated measures ANOVA analysis.</p>
+
+<h2 id="steps">Steps:</h2>
+
+<h3 id="1-define-your-variables-collect-and-input-data">1. Define Your Variables Collect and Input Data:</h3>
+<p>The organization needs to find out how effective their three-week training program is at improving participants’ self-efficacy level. After training each week, scores on a self-efficacy measure are collected from the participants. This is what will be used to measure the effectiveness of the training sessions. The following table shows the data that will be used.
+<img src="/assets/img/Rplot.png" alt="repeatedmeasuresdata" /></p>
+<h3 id="2-check-assumptions">2. Check Assumptions</h3>
+<p>Next, we make sure that the dataset does not violate any assumptions of normality, sphericity, and that there are no extreme outliers that could bias our results. The Shapiro-Wilk test of normality and Mauchly’s test for sphericity indicated that neither of these assumptions were violated. The QQ-plot below shows that the data is normally distributed.</p>
+
+<p><img src="/assets/img/rm-qqplot.png" alt="repeatedmeasuresqqplot" />
+There was however one outlier in the second group, though it was not an extreme outlier so its effects on the final analysis will be negligible.</p>
+<h3 id="3-run-analysis">3. Run analysis</h3>
+<p>The results of the ANOVA show that the training sessions had a significant effect on the participants’ level of self-efficacy, F(2, 18) = 55.467, p &lt; .001, 2ηG2 = 0.829. The rather large effect size indicates that approximately 82.9% of the variance in scores is accounted for by the training sessions. In post-hoc pairwise comparisons of scores across different points in time, significant increases in score were observed for each measurement, indicating a steady increase in level of self-efficacy after each training session. These training sessions have been shown to be highly effective in increasing levels of self-efficacy.</p>
+
+<h3 id="4-conclusion">4. Conclusion</h3>
+<p>Repeated measures ANOVAs can be a great tool for evaluating training effectiveness. By looking at how interventions or other variables affect employees over time, employers can gain insight into the results  of their initiatives.</p>
+
+<p>This project was run in R using the following code:</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+
+<pre><code class="r">
+dat1 &lt;- A4_data1 %&gt;%
+  gather(key = "time", value = "score", t1, t2, t3) %&gt;%
+  convert_as_factor(id, time)
+dat1
+dat1 %&gt;%
+  group_by(time) %&gt;%
+  get_summary_stats(score, type = "mean_sd")
+dat1 %&gt;%
+  group_by(time) %&gt;%
+  shapiro_test(score)
+res.aov &lt;- anova_test(data = dat1, dv = score, wid = id, within = time)
+res.aov
+bxp &lt;- ggboxplot(dat1, x = "time", y = "score", add = "point")
+bxp
+dat1 %&gt;%
+  group_by(time) %&gt;%
+  identify_outliers(score)
+ggqqplot(dat1, "score", facet.by = "time")
+get_anova_table(res.aov)
+pwc &lt;- dat1 %&gt;%
+  pairwise_t_test(score ~ time, paired = TRUE,
+    p.adjust.method = "holm")
+pwc
+</code></pre>
+
+
+</div>
+
+<div class="pagination">
+  
+  
+    <a href="/posts/HLM/" class="right next">Next</a>
+  
+
+  <a href="#" class="top">Top</a>
+</div>
+
+    </main>
+
+    <footer>
+      <span>
+        &copy; <time datetime="2023-08-12 00:26:07 -0500">2023</time> Cameron Arno. <a href="https://github.com/kssim/about-portfolio/">A.P</a> theme by kssim.
+      </span>
+    </footer>
+  </body>
+</html>
